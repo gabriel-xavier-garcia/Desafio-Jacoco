@@ -74,6 +74,7 @@ public class ScoreServiceTests {
 		MovieDTO result = service.saveScore(scoreDTO);
 
 		Assertions.assertNotNull(result);
+		Mockito.verify(scoreRepository, Mockito.times(1)).saveAndFlush(any());
 	}
 	
 	@Test
